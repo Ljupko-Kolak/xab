@@ -1,0 +1,21 @@
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe.config
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csproj.CoreCompileInputs.cache
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe.config
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csprojAssemblyReference.cache
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csproj.CoreCompileInputs.cache
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\Desktop\Program za Otpusnice\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe.config
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csprojAssemblyReference.cache
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csproj.CoreCompileInputs.cache
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csprojAssemblyReference.cache
