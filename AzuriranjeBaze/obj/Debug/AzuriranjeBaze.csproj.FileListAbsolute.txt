@@ -19,3 +19,10 @@ C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\Az
 C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.exe
 C:\Users\Ljupko\Desktop\Program za Otpusnice (eeeeeeh 12-11-2018)\Source Code\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.pdb
 C:\Users\Ljupko\source\repos\AzuriranjeBaze\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csprojAssemblyReference.cache
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csprojAssemblyReference.cache
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.csproj.CoreCompileInputs.cache
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\obj\Debug\AzuriranjeBaze.pdb
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe.config
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.exe
+C:\Users\Ljupko\Documents\GitRepos\xab\AzuriranjeBaze\bin\Debug\AzuriranjeBaze.pdb

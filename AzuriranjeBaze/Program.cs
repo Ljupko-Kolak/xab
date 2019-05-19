@@ -21,6 +21,7 @@ namespace AzuriranjeBaze
             Console.WriteLine("\tpostavljanje dr.Mladena Čuturića kao šefa novonastalog odjela");
             Console.WriteLine("4)\tPostavljanje dr.Marka Androševića kao šefa odjela intenzivnog liječenja");
             Console.WriteLine("5)\tPostavljanje dr.Zvonimira Stipca kao šefa odjela ginekologije");
+            Console.WriteLine("6)\tDodavanje dr.Srđana Gornjakovića u odjel minimalno invazivne kirurgije");
             Console.WriteLine("\n");
             string putanja = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\OP podatci\\Resursi\\Baza.xml";
 
@@ -164,6 +165,28 @@ namespace AzuriranjeBaze
             }
             Pohrani(baza);
             Console.WriteLine("Dr.Zvonimir Stipac postavljen kao šef odjela ginekologije");
+            #endregion
+
+            #region Korak 6
+            Console.WriteLine("Pritisnite bilo koju tipku za nastavak...");
+            Console.ReadKey(true);
+            Console.WriteLine("6)");
+            foreach (Odjel o in baza.odjeli)
+            {
+                if (o.naziv == "Minimalno invazivna kirurgija")
+                {
+                    Lijecnik srdjan = new Lijecnik();
+                    srdjan.imePrezime = "Srđan Gornjaković";
+                    srdjan.titula1 = "Dr.med.sci.Srđan Gornjaković";
+                    srdjan.titula2 = "gastroenterohepatolog";
+
+                    o.lijecnici.Add(srdjan);
+                    SortirajLijecnike(o);
+                    Pohrani(baza);
+                    break;
+                }
+            }
+            Console.WriteLine("Dr.Srđan Gornjaković dodan u odjel minimalno invazivne kirurgije");
             #endregion
 
             Console.WriteLine("Pritisnite bilo koju tipku za izlaz...");
