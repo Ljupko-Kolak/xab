@@ -13,16 +13,7 @@ namespace AzuriranjeBaze
         static void Main(string[] args)
         {
             Console.WriteLine("AŽURIRANJE BAZE\n");
-            Console.WriteLine("5. 9. 2019.");
-            Console.WriteLine("1)\tBrisanje dr.Mladena Čuturića i Prim.dr.Petra Lekića");
-            Console.WriteLine("2)\tDodavanje odjela Minimalno invazivne kirurgije i");
-            Console.WriteLine("\tkopiranje liječnika sa odjela intenzivnog liječenja i kirurgije u novonastali odjel");
-            Console.WriteLine("3)\tDodavanje odjela ORL i kirurgije glave i vrata i");
-            Console.WriteLine("\tpostavljanje dr.Mladena Čuturića kao šefa novonastalog odjela");
-            Console.WriteLine("4)\tPostavljanje dr.Marka Androševića kao šefa odjela intenzivnog liječenja");
-            Console.WriteLine("5)\tPostavljanje dr.Zvonimira Stipca kao šefa odjela ginekologije");
-            Console.WriteLine("6)\tDodavanje dr.Srđana Gornjakovića u odjel minimalno invazivne kirurgije");
-            Console.WriteLine("\n");
+            Console.WriteLine("30. 8. 2019.");
             string putanja = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\OP podatci\\Resursi\\Baza.xml";
 
             //učitam bazu
@@ -33,160 +24,134 @@ namespace AzuriranjeBaze
             Console.WriteLine("\n");
 
             #region Korak 1
-            Console.WriteLine("1)");
+            Console.WriteLine("Mijenjanje telefonskog broja odjela Minimalno invazivne kirirgije");
             foreach (Odjel o in baza.odjeli)
             {
-                if (o.naziv == "Kirurgija")
+                if (o.naziv == "Minimalno invazivna kirurgija")
                 {
-                    foreach (Lijecnik l in o.lijecnici)
-                    {
-                        if (l.imePrezime == "Mladen Čuturić")
-                        {
-                            o.lijecnici.Remove(l);
-                            break;
-                        }
-                    }
-                }
-                else if (o.naziv == "Odjel anestezije i intenzivnog liječenja")
-                {
-                    foreach (Lijecnik l in o.lijecnici)
-                    {
-                        if (l.imePrezime == "Petar Lekić")
-                        {
-                            o.lijecnici.Remove(l);
-                            break;
-                        }
-                    }
+                    o.broj = "tel. 030/708-582";
+                    break;
                 }
             }
             Pohrani(baza);
-            Console.WriteLine("Dr.Mladen Čuturić i dr.Petar Lekić uspješno izbrisani!");
+            Console.WriteLine("Promjena obavljena!\n");
             #endregion
 
             #region Korak 2
             Console.WriteLine("Pritisnite bilo koju tipku za nastavak...");
             Console.ReadKey(true);
-            Console.WriteLine("2)");
+            Console.WriteLine("Dodavanje doktora Ismara Rašića u odjele Kirurgija i Minimalno invazivna kirurgija");
 
-            //napravim novi odjel
-            Odjel mik = new Odjel();
-            mik.naziv = "Minimalno invazivna kirurgija";
-            mik.broj = "tel. 030/708-600";
-            mik.sef = "Dalibor Kolak";
-            mik.titula1 = "dr.Dalibor Kolak";
-            mik.titula2 = "specijalist opće kirurgije";
+            // napravim novog lijecnika
+            Lijecnik ismar = new Lijecnik();
+            ismar.imePrezime = "Ismar Rašić";
+            ismar.titula1 = "dr.sc. Ismar Rašić";
+            ismar.titula2 = "specijalist opće i subspecijalist abdominalne kirurgije";
 
-            //dodaj liječnike u odjel
+            // dodavanje u oba odjela
             foreach (Odjel o in baza.odjeli)
             {
-                if (o.naziv == "Interno" || o.naziv == "Kirurgija")
+                if (o.naziv == "Kirurgija" || o.naziv == "Minimalno invazivna kirurgija")
                 {
+                    bool containsDoctor = false;
                     foreach (Lijecnik l in o.lijecnici)
                     {
-                        if (mik.lijecnici.Contains(l) == false)
+                        if (l.imePrezime == ismar.imePrezime && l.titula1 == ismar.titula1 && l.titula2 == ismar.titula2)
                         {
-                            mik.lijecnici.Add(l);
+                            containsDoctor = true;
+                            break;
                         }
+                    }
+                    if (containsDoctor == false)
+                    {
+                        o.lijecnici.Add(ismar);
+                        SortirajLijecnike(o);
                     }
                 }
             }
-
-            SortirajLijecnike(mik);
-
-            //izvršavanje funkcije za dodavanje novog odjela
-            DodajOdjel(baza, mik);
+            Pohrani(baza);
+            Console.WriteLine("Liječnik unesen u bazu!\n");
             #endregion
 
             #region Korak 3
             Console.WriteLine("Pritisnite bilo koju tipku za nastavak...");
             Console.ReadKey(true);
-            Console.WriteLine("3)");
+            Console.WriteLine("Dodavanje doktora Amira Jašarevića u odjel ORL i kirurgije glave i vrata)");
 
-            //napravim novi odjel
-            Odjel orlgv = new Odjel();
-            orlgv.naziv = "Odjel otorinolaringologije i kirurgije glave i vrata";
-            orlgv.broj = "tel. 030/708-601";
-            orlgv.sef = "Mladen Čuturić";
-            orlgv.titula1 = "dr.Mladen Čuturić";
-            orlgv.titula2 = "specijalist otorinolaringologije";
+            // napravim novog lijecnika
+            Lijecnik amir = new Lijecnik();
+            amir.imePrezime = "Amir Jašarević";
+            amir.titula1 = "dr. Amir Jašarević";
+            amir.titula2 = "specijalist maksilofacijalne kirurgije";
 
-            //dodaj liječnike u odjel
-            List<Lijecnik> lijecnici = new List<Lijecnik>();
-
-            Lijecnik noviLijecnik = new Lijecnik();
-
-            noviLijecnik.imePrezime = "Mladen Čuturić";
-            noviLijecnik.titula1 = "dr.Mladen Čuturić";
-            noviLijecnik.titula2 = "specijalist otorinolaringologije";
-
-            lijecnici.Add(noviLijecnik);
-
-            orlgv.lijecnici = lijecnici;
-
-            //SortirajLijecnike(orlgv);
-
-            //izvršavanje funkcije za dodavanje novog odjela
-            DodajOdjel(baza, orlgv);
+            // dodavanje u odjel
+            foreach (Odjel o in baza.odjeli)
+            {
+                if (o.naziv == "Odjel otorinolaringologije i kirurgije glave i vrata")
+                {
+                    bool containsDoctor = false;
+                    foreach (Lijecnik l in o.lijecnici)
+                    {
+                        if (l.imePrezime == amir.imePrezime && l.titula1 == amir.titula1 && l.titula2 == amir.titula2)
+                        {
+                            containsDoctor = true;
+                            break;
+                        }
+                    }
+                    if (containsDoctor == false)
+                    {
+                        o.lijecnici.Add(amir);
+                        SortirajLijecnike(o);
+                    }
+                }
+            }
+            Pohrani(baza);
+            Console.WriteLine("Liječnik unesen u bazu!\n");
             #endregion
 
             #region Korak 4
             Console.WriteLine("Pritisnite bilo koju tipku za nastavak...");
             Console.ReadKey(true);
-            Console.WriteLine("4)");
+            Console.WriteLine("dr. Vesna Majher Tomić i dr. Tanja Jukić-Gavrić");
 
             foreach (Odjel o in baza.odjeli)
             {
                 if (o.naziv == "Odjel anestezije i intenzivnog liječenja")
                 {
-                    o.sef = "Marko Androšević";
-                    o.titula1 = "dr.Marko Androšević";
-                    o.titula2 = "specijalist anesteziologije, reanimatologije i intenzivnog liječenja";
+                    foreach (Lijecnik l in o.lijecnici)
+                    {
+                        if (l.imePrezime == "Vesna Majher")
+                        {
+                            l.imePrezime = "Vesna Majher Tomić";
+                            l.titula1 = "dr.Vesna Majher Tomić";
+                            break;
+                        }
+                    }
+
+                    Lijecnik tanja = new Lijecnik();
+                    tanja.imePrezime = "Tanja Jukić-Gavrić";
+                    tanja.titula1 = "dr. Tanja Jukić-Gavrić";
+                    tanja.titula2 = "specijalist anesteziologije, reanimatologije i intenzivnog liječenja";
+
+                    bool containsDoctor = false;
+                    foreach (Lijecnik l in o.lijecnici)
+                    {
+                        if (l.imePrezime == tanja.imePrezime && l.titula1 == tanja.titula1 && l.titula2 == tanja.titula2)
+                        {
+                            containsDoctor = true;
+                            break;
+                        }
+                    }
+                    if (containsDoctor == false)
+                    {
+                        o.lijecnici.Add(tanja);
+                        SortirajLijecnike(o);
+                    }
                     break;
                 }
             }
             Pohrani(baza);
-            Console.WriteLine("Dr.Marko Androšević postavljen kao šef odjela anestezije i intenzivnog liječenja");
-            #endregion
-
-            #region Korak 5
-            Console.WriteLine("Pritisnite bilo koju tipku za nastavak...");
-            Console.ReadKey(true);
-            Console.WriteLine("5)");
-
-            foreach (Odjel o in baza.odjeli)
-            {
-                if (o.naziv == "Ginekologija")
-                {
-                    o.sef = "Zvonimir Stipac";
-                    o.titula1 = "dr.Zvonimir Stipac";
-                    o.titula2 = "specijalist ginekologije i porodništva";
-                    break;
-                }
-            }
-            Pohrani(baza);
-            Console.WriteLine("Dr.Zvonimir Stipac postavljen kao šef odjela ginekologije");
-            #endregion
-
-            #region Korak 6
-            Console.WriteLine("Pritisnite bilo koju tipku za nastavak...");
-            Console.ReadKey(true);
-            Console.WriteLine("6)");
-            foreach (Odjel o in baza.odjeli)
-            {
-                if (o.naziv == "Minimalno invazivna kirurgija")
-                {
-                    Lijecnik srdjan = new Lijecnik();
-                    srdjan.imePrezime = "Srđan Gornjaković";
-                    srdjan.titula1 = "Dr.med.sci.Srđan Gornjaković";
-                    srdjan.titula2 = "gastroenterohepatolog";
-
-                    o.lijecnici.Add(srdjan);
-                    SortirajLijecnike(o);
-                    Pohrani(baza);
-                    break;
-                }
-            }
-            Console.WriteLine("Dr.Srđan Gornjaković dodan u odjel minimalno invazivne kirurgije");
+            Console.WriteLine("Promjene obavljene!");
             #endregion
 
             Console.WriteLine("Pritisnite bilo koju tipku za izlaz...");
